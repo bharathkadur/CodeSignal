@@ -1,0 +1,16 @@
+def solution(votes, k):
+    win = 0
+    max1 = max(votes)
+    if k == 0:
+        c = 0
+        for i in votes:
+            if i == max1:
+                c +=1
+        if c > 1:
+            return 0
+        else:
+            return 1
+    for i in votes:
+        if i + k > max1:
+            win += 1
+    return win
